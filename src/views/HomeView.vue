@@ -1,10 +1,14 @@
 <script setup></script>
 
 <template>
-  <h1>HOME VIEW</h1>
+  <section>
+    <AppText tag="h1"> HOME VIEW </AppText>
+    <AppButton
+      class="text-3"
+      label="Adicionar ao carrinho"
+      type="addCart"
+    />
+  </section>
 </template>
 
-<style lang="sass">
-h1
-  color: $white
-</style>
+<style lang="sass"></style>
