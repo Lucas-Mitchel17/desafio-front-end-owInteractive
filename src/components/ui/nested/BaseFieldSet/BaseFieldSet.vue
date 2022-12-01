@@ -22,7 +22,7 @@ defineProps({
 
     <AppText
       class="text-error"
-      tag="spam"
+      tag="span"
     >
       {{ errorMessage }}
     </AppText>
