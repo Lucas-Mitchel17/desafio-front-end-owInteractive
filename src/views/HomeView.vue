@@ -1,5 +1,6 @@
 <script setup>
 import { ref, reactive } from 'vue';
+import { BaseThumbnail } from '@BaseUi';
 import { BaseInput } from '@ComposedUi';
 import { BaseFieldSet, BaseForm } from '@NestedUi';
 
@@ -95,6 +96,9 @@ const fields = reactive([
 
     <AppText tag="h2"> BaseForm </AppText>
     <BaseForm :fields="fields" />
+
+    <AppText tag="h2"> Thumbnail </AppText>
+    <BaseThumbnail />
   </section>
 </template>
 
