@@ -23,8 +23,6 @@ const props = defineProps({
 
   mask: String,
 
-  multiple: Boolean,
-
   maxlength: Number,
 
   placeholder: String,
@@ -90,7 +88,6 @@ const dynamicClasses = computed(() => {
     :hidden="hidden"
     :id="id"
     :maxlength="maxlength"
-    :multiple="multiple"
     :name="name"
     :placeholder="placeholder"
     :type="type"
@@ -106,6 +103,17 @@ const dynamicClasses = computed(() => {
   border-radius: 2px
   height: 32px
   padding: 0 10px
+
+.input-small
+  max-width: 140px
+  width: 100%
+.input-medium
+  max-width: 200px
+  width: 100%
+
+.input-full
+  max-width: 437px
+  width: 100%
 
 .input:active,
 .input:hover,
