@@ -25,6 +25,9 @@ export default defineConfig({
       '@ComposedUi': fileURLToPath(
         new URL('./src/components/ui/composed', import.meta.url)
       ),
+      '@NestedUi': fileURLToPath(
+        new URL('./src/components/ui/nested', import.meta.url)
+      ),
       '@Layouts': fileURLToPath(
         new URL('./src/components/layout', import.meta.url)
       ),
