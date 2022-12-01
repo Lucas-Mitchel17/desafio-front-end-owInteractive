@@ -113,4 +113,9 @@ const dynamicClasses = computed(() => {
 .input:focus-visible
   border: 1px solid $black
   outline: none
+
+.input.has-error
+  border-color: $form-error
+.input.has-error::placeholder
+  color: $form-error
 </style>

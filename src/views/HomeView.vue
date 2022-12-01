@@ -1,5 +1,10 @@
 <script setup>
+import { ref } from 'vue';
 import { BaseInput } from '@ComposedUi';
+import { FieldSet } from '@NestedUi';
+
+const input = ref('');
+const fieldset = ref('');
 </script>
 
 <template>
@@ -18,13 +23,15 @@ import { BaseInput } from '@ComposedUi';
       v-model="input"
       placeholder="texto aqui"
     />
+
+    <AppText tag="h2"> FieldSet </AppText>
+    <FieldSet
+      label="teste"
+      v-model="fieldset"
+      placeholder="Teste de FieldSet"
+      errorMessage="Tem um erro aqui"
+    />
   </section>
 </template>
 
-<style lang="sass">
-.test
-  & > *
-    margin: 20px 0
-    display: flex
-    flex-direction: column
-</style>
+<style lang="sass"></style>
