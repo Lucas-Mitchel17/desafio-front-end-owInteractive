@@ -12,6 +12,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "maska": "^1.5.1",
     "pinia": "^2.0.26",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
