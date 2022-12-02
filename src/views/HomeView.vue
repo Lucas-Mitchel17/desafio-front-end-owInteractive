@@ -2,6 +2,7 @@
 import { ref, reactive } from 'vue';
 import { BaseThumbnail } from '@BaseUi';
 import { BaseInput } from '@ComposedUi';
+import { INPUT_TYPES } from '@Types';
 import { BaseFieldSet, BaseForm } from '@NestedUi';
 
 const input = ref('');
@@ -13,7 +14,7 @@ const fields = reactive([
     errorMessage: '',
     placeholder: '',
     mask: '',
-    type: 'text',
+    type: INPUT_TYPES.TYPE_ENUM.TEXT,
     inputClasses: 'input-full',
   },
   {
@@ -21,7 +22,7 @@ const fields = reactive([
     errorMessage: '',
     placeholder: '',
     mask: '',
-    type: 'text',
+    type: INPUT_TYPES.TYPE_ENUM.TEXT,
     inputClasses: 'input-medium',
   },
   {
@@ -29,7 +30,7 @@ const fields = reactive([
     errorMessage: '',
     placeholder: '',
     mask: '',
-    type: 'text',
+    type: INPUT_TYPES.TYPE_ENUM.TEXT,
     inputClasses: 'input-small',
   },
 ]);
@@ -99,6 +100,8 @@ const fields = reactive([
 
     <AppText tag="h2"> Thumbnail </AppText>
     <BaseThumbnail />
+
+    <AppText tag="h2"> BaseIcon </AppText>
   </section>
 </template>
 
