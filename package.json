@@ -12,6 +12,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@vuepic/vue-datepicker": "^3.6.0",
     "maska": "^1.5.1",
     "pinia": "^2.0.26",
     "vue": "^3.2.45",

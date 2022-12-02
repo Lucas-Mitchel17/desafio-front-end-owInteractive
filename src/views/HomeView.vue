@@ -1,6 +1,6 @@
 <script setup>
 import { ref, reactive } from 'vue';
-import { BaseThumbnail } from '@BaseUi';
+import { BaseThumbnail, BaseDatePicker } from '@BaseUi';
 import { BaseInput } from '@ComposedUi';
 import { INPUT_TYPES } from '@Types';
 import { BaseFieldSet, BaseForm } from '@NestedUi';
@@ -32,6 +32,12 @@ const fields = reactive([
     mask: '',
     type: INPUT_TYPES.TYPE_ENUM.TEXT,
     inputClasses: 'input-small',
+  },
+  {
+    label: 'Datetime',
+    placeholder: 'Escolha uma data',
+    type: INPUT_TYPES.TYPE_ENUM.DATE,
+    modelValue: '',
   },
 ]);
 </script>
@@ -101,7 +107,8 @@ const fields = reactive([
     <AppText tag="h2"> Thumbnail </AppText>
     <BaseThumbnail />
 
-    <AppText tag="h2"> BaseIcon </AppText>
+    <AppText tag="h2"> BaseDatePicker </AppText>
+    <BaseDatePicker />
   </section>
 </template>
 

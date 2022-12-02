@@ -1,2 +1,2 @@
-export * from './BaseIcon';
 export * from './BaseThumbnail';
+export * from './BaseDatePicker';
