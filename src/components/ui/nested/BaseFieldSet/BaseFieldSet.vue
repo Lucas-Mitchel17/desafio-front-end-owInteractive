@@ -1,3 +1,9 @@
+<script>
+export default {
+  inheritAttrs: false,
+};
+</script>
+
 <script setup>
 import { BaseDatePicker } from '@BaseUi';
 import { BaseInput } from '@ComposedUi';
@@ -6,12 +12,12 @@ import { computed, useAttrs } from 'vue';
 
 const attrs = useAttrs();
 
-const props = defineProps({
+defineProps({
   errorMessage: String,
   label: String,
 });
 
-const isDate = computed(() => props.type === INPUT_TYPES.TYPE_ENUM.DATE);
+const isDate = computed(() => attrs.type === INPUT_TYPES.TYPE_ENUM.DATE);
 </script>
 
 <template>
@@ -19,13 +25,15 @@ const isDate = computed(() => props.type === INPUT_TYPES.TYPE_ENUM.DATE);
     <legend>
       <label for=""> {{ label }} </label>
     </legend>
-    <BaseInput
+
+    <BaseDatePicker
+      v-if="isDate"
       v-bind="attrs"
       :hasError="!!errorMessage"
     />
 
-    <BaseDatePicker
-      v-if="isDate"
+    <BaseInput
+      v-else
       v-bind="attrs"
       :hasError="!!errorMessage"
     />

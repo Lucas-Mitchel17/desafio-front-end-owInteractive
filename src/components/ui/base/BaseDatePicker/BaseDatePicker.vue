@@ -6,14 +6,8 @@ import { styleFromStateHelper } from '@Helpers';
 
 const emit = defineEmits(['update:modelValue']);
 
-const props = defineProps({
+defineProps({
   hasError: Boolean,
-
-  modelValue: {
-    default: '',
-    required: true,
-    type: [Date, String],
-  },
 });
 
 const attrs = useAttrs();
@@ -21,7 +15,7 @@ const { errorClass } = styleFromStateHelper();
 
 const model = computed({
   get() {
-    return props.modelValue;
+    return attrs.modelValue;
   },
 
   set(newValue) {
@@ -30,7 +24,7 @@ const model = computed({
 });
 
 const dynamicClasses = computed(() => {
-  return [errorClass(props.hasError)];
+  return [errorClass(attrs.hasError)];
 });
 </script>
 
