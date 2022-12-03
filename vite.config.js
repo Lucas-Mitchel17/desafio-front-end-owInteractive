@@ -39,6 +39,7 @@ export default defineConfig({
       '@Helpers': fileURLToPath(
         new URL('./src/utils/helpers', import.meta.url)
       ),
+      '@Icons': fileURLToPath(new URL('./src/assets/icons', import.meta.url)),
       '@Types': fileURLToPath(new URL('./src/utils/types', import.meta.url)),
       '@Modules': fileURLToPath(new URL('./src/modules', import.meta.url)),
       '@Libraries': fileURLToPath(new URL('./src/libraries', import.meta.url)),
