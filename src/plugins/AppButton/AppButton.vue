@@ -39,6 +39,9 @@ const emit = defineEmits(['click']);
     :type="role"
     @click="emit('click')"
   >
+    <section class="icon">
+      <slot name="icon" />
+    </section>
     {{ label }}
   </button>
 </template>
@@ -52,6 +55,10 @@ const emit = defineEmits(['click']);
   height: 42px
   margin: 0 5px
   width: 269px
+
+  & > .icon
+    fill: $purple
+    margin: 2px 5px 0 0
 
 .btn:focus-visible
   outline: none
@@ -112,4 +119,16 @@ const emit = defineEmits(['click']);
   background-color: $backgroundDisabled
   color: $white
   cursor: not-allowed
+
+.btn-modal
+  align-items: center
+  background: none
+  color: $purple
+  display: flex
+  font-size: $modalButton
+  height: auto
+  justify-content: center
+  letter-spacing: .15px
+  margin: auto
+  text-transform: uppercase
 </style>

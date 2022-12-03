@@ -7,6 +7,7 @@ const TYPES_ENUM = {
   PROCEED: 'proceed',
   BACK: 'back',
   ADDCART: 'addCart',
+  MODAL: 'modal',
 };
 
 const BUTTON_TYPES = {

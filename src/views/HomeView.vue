@@ -1,50 +1,59 @@
 <script setup>
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 import { BaseThumbnail, BaseDatePicker } from '@BaseUi';
-import { BaseInput } from '@ComposedUi';
-import { INPUT_TYPES } from '@Types';
-import { BaseFieldSet, BaseForm } from '@NestedUi';
+import { BaseModal } from '@NestedUi';
+import Check from '@Icons/check.svg?component';
+import LeftArrow from '@Icons/left-arrow.svg?component';
+// import { BaseInput } from '@ComposedUi';
+// import { INPUT_TYPES } from '@Types';
+// import { BaseFieldSet, BaseForm } from '@NestedUi';
 
-const input = ref('');
-const fieldset = ref('');
+// const input = ref('');
+// const fieldset = ref('');
 
-const fields = reactive([
-  {
-    label: 'Field 1',
-    errorMessage: '',
-    placeholder: '',
-    mask: '',
-    type: INPUT_TYPES.TYPE_ENUM.TEXT,
-    inputClasses: 'input-full',
-  },
-  {
-    label: 'Field 2',
-    errorMessage: '',
-    placeholder: '',
-    mask: '',
-    type: INPUT_TYPES.TYPE_ENUM.TEXT,
-    inputClasses: 'input-medium',
-  },
-  {
-    label: 'Field 3',
-    errorMessage: '',
-    placeholder: '',
-    mask: '',
-    type: INPUT_TYPES.TYPE_ENUM.TEXT,
-    inputClasses: 'input-small',
-  },
-  {
-    label: 'Datetime',
-    placeholder: 'Escolha uma data',
-    type: INPUT_TYPES.TYPE_ENUM.DATE,
-    modelValue: '',
-  },
-]);
+// const fields = reactive([
+//   {
+//     label: 'Field 1',
+//     errorMessage: '',
+//     placeholder: '',
+//     mask: '',
+//     type: INPUT_TYPES.TYPE_ENUM.TEXT,
+//     inputClasses: 'input-full',
+//   },
+//   {
+//     label: 'Field 2',
+//     errorMessage: '',
+//     placeholder: '',
+//     mask: '',
+//     type: INPUT_TYPES.TYPE_ENUM.TEXT,
+//     inputClasses: 'input-medium',
+//   },
+//   {
+//     label: 'Field 3',
+//     errorMessage: '',
+//     placeholder: '',
+//     mask: '',
+//     type: INPUT_TYPES.TYPE_ENUM.TEXT,
+//     inputClasses: 'input-small',
+//   },
+//   {
+//     label: 'Datetime',
+//     placeholder: 'Escolha uma data',
+//     type: INPUT_TYPES.TYPE_ENUM.DATE,
+//     modelValue: '',
+//   },
+// ]);
+
+const open = ref(false);
+
+function toogleModal() {
+  open.value = !open.value;
+}
 </script>
 
 <template>
   <section class="test">
-    <AppText tag="h1"> App Text </AppText>
+    <!-- <AppText tag="h1"> App Text </AppText>
 
     <AppText tag="h2"> Botões </AppText>
     <AppButton
@@ -78,9 +87,9 @@ const fields = reactive([
       label="Ir para Checkout"
       type="proceed"
       disabled
-    />
+    /> -->
 
-    <AppText tag="h2"> Input </AppText>
+    <!-- <AppText tag="h2"> Input </AppText>
     <BaseInput
       v-model="input"
       placeholder="texto aqui"
@@ -102,13 +111,38 @@ const fields = reactive([
     />
 
     <AppText tag="h2"> BaseForm </AppText>
-    <BaseForm :fields="fields" />
+    <BaseForm :fields="fields" /> -->
 
     <AppText tag="h2"> Thumbnail </AppText>
     <BaseThumbnail />
 
     <AppText tag="h2"> BaseDatePicker </AppText>
     <BaseDatePicker />
+
+    <AppText tag="h2"> BaseModal </AppText>
+    <AppButton
+      label="Abrir Modal"
+      type="proceed"
+      @click="toogleModal"
+    />
+    <BaseModal
+      v-model="open"
+      title="Seu cadastro foi realizado com sucesso!"
+      closable
+    >
+      <template v-slot:icon>
+        <Check />
+      </template>
+      <AppButton
+        label="Voltar Para a home"
+        type="modal"
+        @click="toogleModal"
+      >
+        <template v-slot:icon>
+          <LeftArrow />
+        </template>
+      </AppButton>
+    </BaseModal>
   </section>
 </template>
 
