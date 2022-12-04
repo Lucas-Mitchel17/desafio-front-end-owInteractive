@@ -4,6 +4,7 @@ import { BaseThumbnail, BaseDatePicker } from '@BaseUi';
 import { BaseModal } from '@NestedUi';
 import Check from '@Icons/check.svg?component';
 import LeftArrow from '@Icons/left-arrow.svg?component';
+import { ProductSlider } from '@Modules/product';
 // import { BaseInput } from '@ComposedUi';
 // import { INPUT_TYPES } from '@Types';
 // import { BaseFieldSet, BaseForm } from '@NestedUi';
@@ -49,6 +50,17 @@ const open = ref(false);
 function toogleModal() {
   open.value = !open.value;
 }
+
+const slides = [
+  {
+    title: 'Slide 1',
+    subtitle: 'Slide 1',
+  },
+  {
+    title: 'Slide 2',
+    subtitle: 'Slide 2',
+  },
+];
 </script>
 
 <template>
@@ -143,6 +155,9 @@ function toogleModal() {
         </template>
       </AppButton>
     </BaseModal>
+
+    <AppText tag="h2"> BaseSLider </AppText>
+    <ProductSlider :slides="slides" />
   </section>
 </template>
 
