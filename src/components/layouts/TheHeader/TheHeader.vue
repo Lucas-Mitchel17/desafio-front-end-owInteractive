@@ -1,0 +1,70 @@
+<script setup>
+import { CartLink } from '@Modules/cart';
+
+const totalProducts = [
+  {
+    id: 1,
+  },
+  {
+    id: 2,
+  },
+  {
+    id: 3,
+  },
+  {
+    id: 4,
+  },
+  {
+    id: 5,
+  },
+];
+</script>
+
+<template>
+  <header class="header">
+    <nav class="nav">
+      <AppText tag="h1"> Mkt<span>Place</span> </AppText>
+
+      <AppText>Produtos</AppText>
+      <CartLink :items="totalProducts.length" />
+    </nav>
+  </header>
+</template>
+
+<style lang="sass">
+.header
+  background: white
+  box-shadow: 0px 4px 12px 0px #0000003b
+  display: grid
+  height: 106px
+  left: 0
+  position: fixed
+  top: 0
+  width: 100%
+
+  & > .nav
+    align-items: center
+    display: grid
+    grid-template-columns: minmax(120px, 790px) repeat(2, 80px)
+    margin: auto
+    max-width: 1024px
+    padding: 0 20px
+    width: 100%
+
+    @media (min-width: $small)
+      grid-template-columns: minmax(120px, 790px) repeat(2, 110px)
+
+
+    & > .text-h1
+      color: $grey
+      font-size: 30px
+      margin: 0
+
+      & > span
+        color: $purple
+
+    & > p
+      color: $darkGrey
+      font-size: 15px
+      font-weight: 600
+</style>
