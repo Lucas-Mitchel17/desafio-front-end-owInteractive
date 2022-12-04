@@ -30,7 +30,7 @@ export default defineConfig({
         new URL('./src/components/ui/nested', import.meta.url)
       ),
       '@Layouts': fileURLToPath(
-        new URL('./src/components/layout', import.meta.url)
+        new URL('./src/components/layouts', import.meta.url)
       ),
       '@Views': fileURLToPath(new URL('./src/views', import.meta.url)),
       '@Composables': fileURLToPath(
