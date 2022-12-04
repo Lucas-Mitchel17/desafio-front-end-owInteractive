@@ -34,11 +34,11 @@ const totalProducts = [
 <style lang="sass">
 .header
   background: white
-  box-shadow: 0px 4px 12px 0px #0000003b
+  box-shadow: 0px -10px 28px 0px #0000003b
   display: grid
   height: 106px
   left: 0
-  position: fixed
+  position: relative
   top: 0
   width: 100%
 
