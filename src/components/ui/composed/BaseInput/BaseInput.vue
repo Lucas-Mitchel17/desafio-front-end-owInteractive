@@ -101,8 +101,13 @@ const dynamicClasses = computed(() => {
 .input
   border: 1px solid $inputGrey
   border-radius: 2px
-  height: 32px
+  height: 34px
   padding: 0 10px
+
+.input::placeholder
+  color: $footer
+  font-size: 11px
+  font-weight: 600
 
 .input-small
   max-width: 140px

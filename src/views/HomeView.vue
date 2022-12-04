@@ -4,7 +4,7 @@
 // import { BaseModal } from '@NestedUi';
 // import Check from '@Icons/check.svg?component';
 // import LeftArrow from '@Icons/left-arrow.svg?component';
-// import { ProductSlider } from '@Modules/product';
+import { ProductSlider, ProductSearchBar } from '@Modules/product';
 // import { BaseInput } from '@ComposedUi';
 // import { INPUT_TYPES } from '@Types';
 // import { BaseFieldSet, BaseForm } from '@NestedUi';
@@ -51,21 +51,24 @@
 //   open.value = !open.value;
 // }
 
-// const slides = [
-//   {
-//     title: 'Slide 1',
-//     subtitle: 'Slide 1',
-//   },
-//   {
-//     title: 'Slide 2',
-//     subtitle: 'Slide 2',
-//   },
-// ];
+const slides = [
+  {
+    title: 'Notebooks',
+    subtitle: 'As melhores ofertas',
+  },
+  {
+    title: 'Preço baixo',
+    subtitle: 'Você encontra aqui',
+  },
+];
 </script>
 
 <template>
   <MainLayout>
-    <AppText> MIOLO </AppText>
+    <ProductSlider :slides="slides" />
+    <section class="container">
+      <ProductSearchBar />
+    </section>
   </MainLayout>
   <!-- <AppText tag="h1"> App Text </AppText>
 
@@ -159,7 +162,12 @@
     </BaseModal>
 
     <AppText tag="h2"> BaseSLider </AppText>
-    <ProductSlider :slides="slides" /> -->
+    -->
 </template>
 
-<style lang="sass"></style>
+<style lang="sass">
+.container
+  display: grid
+  max-width: $desktop
+  margin: 40px auto 0
+</style>

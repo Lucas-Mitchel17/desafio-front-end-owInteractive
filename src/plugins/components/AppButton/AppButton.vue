@@ -53,7 +53,7 @@ const emit = defineEmits(['click']);
   cursor: pointer
   font-family: 'Source Sans Pro'
   height: 42px
-  margin: 0 5px
+  margin: 0
   width: 269px
 
   & > .icon

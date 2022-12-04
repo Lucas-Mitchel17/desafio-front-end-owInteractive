@@ -11,6 +11,7 @@ defineProps({
 
 <template>
   <carousel
+    :autoplay="5000"
     :wrap-around="true"
     :items-to-show="1"
   >
@@ -41,19 +42,28 @@ defineProps({
   flex-direction: column
   justify-content: end
   margin: auto
-  max-width: 1024px
+  max-width: $desktop
   width: 100%
 
   & > .text-h2
     color: $white
     text-align: right
     font-size: 50px
-    margin: 0 20px 0 0
+    line-height: 1.15
+    margin: 0 20px 5px 0
+
+    @media (min-width: $desktop)
+      font-size: 60px
+      margin: 0
 
   & > .text-h3
     color: $white
-    font-size: 30px
+    font-size: 25px
     font-weight: 900
     margin: 0 20px 0 0
     text-align: right
+
+    @media (min-width: $desktop)
+      font-size: 30px
+      margin: 0
 </style>

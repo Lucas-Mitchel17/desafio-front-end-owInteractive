@@ -8,6 +8,7 @@ const TYPE_ENUM = {
   EMAIL: 'email',
   HIDDEN: 'hidden',
   NUMBER: 'number',
+  SEARCH: 'search',
   TEL: 'tel',
   TEXT: 'text',
 };
