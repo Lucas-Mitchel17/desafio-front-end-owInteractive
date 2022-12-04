@@ -1,6 +1,4 @@
-import AppButtonPlugin from './AppButton/plugin';
-import AppTextPlugin from './AppText/plugin';
-export { BUTTON_TYPES } from './AppButton';
-export { TEXT_TYPES } from './AppText';
+import { AppButtonPlugin, AppTextPlugin } from './components';
+import { MainLayoutPlugin } from './layouts';
 
-export default [AppButtonPlugin, AppTextPlugin];
+export default [AppButtonPlugin, AppTextPlugin, MainLayoutPlugin];

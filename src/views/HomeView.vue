@@ -1,11 +1,10 @@
 <script setup>
-import { ref } from 'vue';
-import { BaseThumbnail, BaseDatePicker } from '@BaseUi';
-import { BaseModal } from '@NestedUi';
-import Check from '@Icons/check.svg?component';
-import LeftArrow from '@Icons/left-arrow.svg?component';
-import { ProductSlider } from '@Modules/product';
-import { TheHeader, TheFooter } from '@Layouts';
+// import { ref } from 'vue';
+// import { BaseThumbnail, BaseDatePicker } from '@BaseUi';
+// import { BaseModal } from '@NestedUi';
+// import Check from '@Icons/check.svg?component';
+// import LeftArrow from '@Icons/left-arrow.svg?component';
+// import { ProductSlider } from '@Modules/product';
 // import { BaseInput } from '@ComposedUi';
 // import { INPUT_TYPES } from '@Types';
 // import { BaseFieldSet, BaseForm } from '@NestedUi';
@@ -46,29 +45,29 @@ import { TheHeader, TheFooter } from '@Layouts';
 //   },
 // ]);
 
-const open = ref(false);
+// const open = ref(false);
 
-function toogleModal() {
-  open.value = !open.value;
-}
+// function toogleModal() {
+//   open.value = !open.value;
+// }
 
-const slides = [
-  {
-    title: 'Slide 1',
-    subtitle: 'Slide 1',
-  },
-  {
-    title: 'Slide 2',
-    subtitle: 'Slide 2',
-  },
-];
+// const slides = [
+//   {
+//     title: 'Slide 1',
+//     subtitle: 'Slide 1',
+//   },
+//   {
+//     title: 'Slide 2',
+//     subtitle: 'Slide 2',
+//   },
+// ];
 </script>
 
 <template>
-  <section class="test">
-    <TheHeader />
-
-    <!-- <AppText tag="h1"> App Text </AppText>
+  <MainLayout>
+    <AppText> MIOLO </AppText>
+  </MainLayout>
+  <!-- <AppText tag="h1"> App Text </AppText>
 
     <AppText tag="h2"> Botões </AppText>
     <AppButton
@@ -104,7 +103,7 @@ const slides = [
       disabled
     /> -->
 
-    <!-- <AppText tag="h2"> Input </AppText>
+  <!-- <AppText tag="h2"> Input </AppText>
     <BaseInput
       v-model="input"
       placeholder="texto aqui"
@@ -128,7 +127,7 @@ const slides = [
     <AppText tag="h2"> BaseForm </AppText>
     <BaseForm :fields="fields" /> -->
 
-    <AppText tag="h2"> Thumbnail </AppText>
+  <!-- <AppText tag="h2"> Thumbnail </AppText>
     <BaseThumbnail />
 
     <AppText tag="h2"> BaseDatePicker </AppText>
@@ -160,10 +159,7 @@ const slides = [
     </BaseModal>
 
     <AppText tag="h2"> BaseSLider </AppText>
-    <ProductSlider :slides="slides" />
-
-    <TheFooter />
-  </section>
+    <ProductSlider :slides="slides" /> -->
 </template>
 
 <style lang="sass"></style>
