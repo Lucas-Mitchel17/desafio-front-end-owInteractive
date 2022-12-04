@@ -36,9 +36,9 @@ const totalProducts = [
   background: white
   box-shadow: 0px -10px 28px 0px #0000003b
   display: grid
-  height: 106px
+  height: $topnav
   left: 0
-  position: relative
+  position: fixed
   top: 0
   width: 100%
 
