@@ -5,7 +5,7 @@ import { BaseModal } from '@NestedUi';
 import Check from '@Icons/check.svg?component';
 import LeftArrow from '@Icons/left-arrow.svg?component';
 import { ProductSlider } from '@Modules/product';
-import { TheHeader } from '@Layouts';
+import { TheHeader, TheFooter } from '@Layouts';
 // import { BaseInput } from '@ComposedUi';
 // import { INPUT_TYPES } from '@Types';
 // import { BaseFieldSet, BaseForm } from '@NestedUi';
@@ -161,6 +161,8 @@ const slides = [
 
     <AppText tag="h2"> BaseSLider </AppText>
     <ProductSlider :slides="slides" />
+
+    <TheFooter />
   </section>
 </template>
 
