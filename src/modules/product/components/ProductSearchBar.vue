@@ -30,7 +30,6 @@ const search = ref('');
   grid-template-columns: 1fr
   background-color: $white
   padding: 20px 35px
-  margin: 0 10px
 
   @media (min-width: $medium)
     grid-template-columns: minmax(100px, 200px) minmax(100px, 636px) 1fr

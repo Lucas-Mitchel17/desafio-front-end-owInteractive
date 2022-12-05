@@ -52,9 +52,7 @@ const emit = defineEmits(['click']);
   border: none
   cursor: pointer
   font-family: 'Source Sans Pro'
-  height: 42px
   margin: 0
-  width: 269px
 
   & > .icon
     fill: $purple
@@ -65,13 +63,19 @@ const emit = defineEmits(['click']);
 
 .btn-addCart
   background-color: $white
+  border-radius: 0
+  border-top: 1px solid $grey
   color: $purple
-  font-weight: 600
+  font-weight: 900
+  height: 60px
   text-transform: uppercase
+  width: 269px
 
 .btn-addCart:hover,
 .btn-addCart:active
   background-color: $purple
+  border-radius: 2px
+  border-top: none
   color: $white
   transition: .5s
 

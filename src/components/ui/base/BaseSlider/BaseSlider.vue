@@ -14,6 +14,7 @@ defineProps({
     :autoplay="5000"
     :wrap-around="true"
     :items-to-show="1"
+    :transition="1500"
   >
     <Slide
       v-for="slide in slides"

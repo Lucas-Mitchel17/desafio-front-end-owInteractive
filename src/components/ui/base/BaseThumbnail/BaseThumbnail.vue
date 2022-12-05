@@ -19,7 +19,7 @@ defineProps({
 <style lang="sass">
 .thumbnail
   height: 100%
-  max-height: 210px
-  max-width: 300px
+  max-height: 248px
+  max-width: 358px
   width: 100%
 </style>
