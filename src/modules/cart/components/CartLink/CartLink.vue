@@ -24,6 +24,10 @@ defineProps({
   justify-content: flex-start
   align-items: flex-end
 
+  @media (min-width: $desktop)
+    justify-content: flex-end
+
+
   & > p
     background-color: $red
     border-radius: 10px
