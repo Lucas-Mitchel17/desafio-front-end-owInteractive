@@ -15,6 +15,7 @@
   height: 70px
   justify-content: center
   margin-top: 60px
+  padding: 30px 0
   position: relative
   width: 100%
 

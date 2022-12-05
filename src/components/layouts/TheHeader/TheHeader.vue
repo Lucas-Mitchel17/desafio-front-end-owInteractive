@@ -41,18 +41,19 @@ const totalProducts = [
   position: fixed
   top: 0
   width: 100%
+  z-index: 99
 
   & > .nav
     align-items: center
     display: grid
-    grid-template-columns: minmax(120px, 790px) repeat(2, 80px)
+    grid-template-columns: minmax(120px, 896px) repeat(2, 80px)
     margin: auto
-    max-width: 1024px
+    max-width: $desktop
     padding: 0 20px
     width: 100%
 
     @media (min-width: $small)
-      grid-template-columns: minmax(120px, 790px) repeat(2, 110px)
+      grid-template-columns: minmax(120px, 896px) repeat(2, 110px)
 
 
     & > .text-h1
@@ -67,4 +68,7 @@ const totalProducts = [
       color: $darkGrey
       font-size: 15px
       font-weight: 600
+
+      @media (min-width: $desktop)
+        text-align: right
 </style>
