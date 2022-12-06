@@ -1,13 +1,21 @@
 <script setup>
+import { useCartStore } from '@Modules/cart';
 import { BaseThumbnail } from '@BaseUi';
 
-const emit = defineEmits(['addToCart']);
+const emit = defineEmits(['onToggleProducts']);
 
 defineProps({
   products: {
     type: Array,
   },
 });
+
+const cartStore = useCartStore();
+function getButtonLabel(id) {
+  return cartStore.products.includes(id)
+    ? 'Remover do carrinho'
+    : 'Adicionar ao carrinho';
+}
 </script>
 
 <template>
@@ -20,8 +28,8 @@ defineProps({
       <BaseThumbnail :path="product.imageUrl" />
 
       <div class="card-infos">
-        <AppText class="category"> {{ product.category }} </AppText>
-        <AppText class="title"> {{ product.name }} </AppText>
+        <AppText class="card-category"> {{ product.category }} </AppText>
+        <AppText class="card-title"> {{ product.name }} </AppText>
         <AppText class="description"> {{ product.description }} </AppText>
         <AppText class="price"> R$ {{ product.price }} </AppText>
       </div>
@@ -29,8 +37,8 @@ defineProps({
 
     <AppButton
       type="addCart"
-      label="Adicionar ao carrinho"
-      @click="emit('addToCart', product.id)"
+      :label="getButtonLabel(product.id)"
+      @click="emit('onToggleProducts', product.id)"
     />
   </section>
 </template>
@@ -47,18 +55,6 @@ defineProps({
 
     & > .card-infos
       padding-top: 20px
-
-
-      & > .category
-        color: $purple
-        font-size: 15px
-        font-weight: 600
-
-      & > .title
-        color: $black
-        font-size: 18px
-        font-weight: 600
-        margin-top: 20px
 
       & > .description
         color: $grey
