@@ -11,7 +11,6 @@ import {
   ProductSearchBar,
   ProductCard,
   useProductStore,
-  getProductsRequest,
 } from '@Modules/product';
 
 const cartStore = useCartStore();
