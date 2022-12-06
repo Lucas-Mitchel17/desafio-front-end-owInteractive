@@ -12,9 +12,12 @@ const cardStore = useCartStore();
         <AppText tag="h1"> Mkt<span>Place</span> </AppText>
       </RouterLink>
 
-      <AppText>Produtos</AppText>
+      <RouterLink
+        class="cart"
+        to="/carrinho"
+      >
+        <AppText>Produtos</AppText>
 
-      <RouterLink to="/carrinho">
         <CartLink :items="cardStore.productsOnCart" />
       </RouterLink>
     </nav>
@@ -36,15 +39,14 @@ const cardStore = useCartStore();
   & > .nav
     align-items: center
     display: grid
-    grid-template-columns: minmax(120px, 896px) repeat(2, 80px)
+    grid-template-columns: minmax(120px, 896px) minmax(100px, 160px)
     margin: auto
     max-width: $desktop
     padding: 0 20px
     width: 100%
 
     @media (min-width: $small)
-      grid-template-columns: minmax(120px, 896px) repeat(2, 110px)
-
+      grid-template-columns: minmax(120px, 896px) minmax(100px, 220px)
 
     & > a > .text-h1
       color: $grey
@@ -54,11 +56,22 @@ const cardStore = useCartStore();
       & > span
         color: $purple
 
-    & > p
-      color: $darkGrey
-      font-size: 15px
-      font-weight: 600
 
-      @media (min-width: $desktop)
-        text-align: right
+    & > .cart
+      display: flex
+      justify-content: center
+      align-items: center
+
+      & > p
+        color: $darkGrey
+        font-size: 15px
+        font-weight: 600
+        display: none
+
+        @media (min-width: $small)
+          display: initial
+          margin-right: 30px
+
+        @media (min-width: $desktop)
+          text-align: right
 </style>
