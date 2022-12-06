@@ -21,7 +21,7 @@ const isDate = computed(() => attrs.type === INPUT_TYPES.TYPE_ENUM.DATE);
 </script>
 
 <template>
-  <fieldset>
+  <fieldset class="fieldset">
     <legend>
       <label for=""> {{ label }} </label>
     </legend>
@@ -48,11 +48,11 @@ const isDate = computed(() => attrs.type === INPUT_TYPES.TYPE_ENUM.DATE);
 </template>
 
 <style lang="sass">
-fieldset
+.fieldset
   border: none
   display: grid
   grid-template-columns: 1fr
-  margin: 0
+  margin: 0 0 30px
   padding: 0
 
 .text-error
