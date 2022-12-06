@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from 'vue-router';
 import { CartLink, useCartStore } from '@Modules/cart';
 
 const cardStore = useCartStore();
@@ -7,13 +8,15 @@ const cardStore = useCartStore();
 <template>
   <header class="header">
     <nav class="nav">
-      <a href="/">
+      <RouterLink to="/">
         <AppText tag="h1"> Mkt<span>Place</span> </AppText>
-      </a>
+      </RouterLink>
 
       <AppText>Produtos</AppText>
 
-      <CartLink :items="cardStore.productsOnCart" />
+      <RouterLink to="/carrinho">
+        <CartLink :items="cardStore.productsOnCart" />
+      </RouterLink>
     </nav>
   </header>
 </template>

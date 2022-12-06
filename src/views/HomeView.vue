@@ -1,15 +1,23 @@
 <script setup>
 import { computed, ref } from 'vue';
-import { useCartStore } from '@Modules/cart';
+import {
+  useCartStore,
+  useRemoveProductFromCart,
+  useStorageCart,
+} from '@Modules/cart';
+
 import {
   ProductSlider,
   ProductSearchBar,
   ProductCard,
   useProductStore,
+  getProductsRequest,
 } from '@Modules/product';
 
 const cartStore = useCartStore();
 const productStore = useProductStore();
+const { removeProduct } = useRemoveProductFromCart();
+const { updateStorageCart } = useStorageCart();
 
 const slides = [
   {
@@ -21,10 +29,7 @@ const slides = [
     subtitle: 'Você encontra aqui',
   },
 ];
-
 const search = ref('');
-
-console.log(search);
 
 const productList = computed(() => {
   if (!search.value) {
@@ -39,12 +44,6 @@ const productList = computed(() => {
   });
 });
 
-function removeProduct(id) {
-  const productIndex = cartStore.products.indexOf(id);
-
-  cartStore.products.pop(productIndex);
-}
-
 function onToggleProducts(id) {
   const isOnCart = cartStore.products.includes(id);
 
@@ -56,26 +55,42 @@ function onToggleProducts(id) {
   const uniqueProductsList = new Set(newProducts);
 
   cartStore.products = [...uniqueProductsList];
+
+  const productsWithQttList = cartStore.products.map((id) => ({
+    id,
+    qtt: 1,
+  }));
+
+  updateStorageCart(productsWithQttList);
 }
 </script>
 
 <template>
   <MainLayout>
     <ProductSlider :slides="slides" />
-    <section class="container">
-      <ProductSearchBar v-model="search" />
 
-      <div class="card-section">
-        <ProductCard
-          :products="productList"
-          @onToggleProducts="onToggleProducts"
-        />
-      </div>
+    <section class="container">
+      <template v-if="productList">
+        <ProductSearchBar v-model="search" />
+
+        <div class="card-section">
+          <ProductCard
+            :products="productList"
+            @onToggleProducts="onToggleProducts"
+          />
+        </div>
+      </template>
+
+      <AppText
+        tag="h2"
+        class="no-items"
+        >Nenhum produto disponível</AppText
+      >
     </section>
   </MainLayout>
 </template>
 
-<style lang="sass">
+<style scoped lang="sass">
 .container
   display: grid
   max-width: $desktop
@@ -94,4 +109,11 @@ function onToggleProducts(id) {
     @media (min-width: $desktop)
       grid-template-columns: repeat(3, 1fr)
       margin: 70px 0 0
+
+  & > .no-items
+    align-items: center
+    display: flex
+    flex-direction: column
+    justify-content: center
+    margin: auto
 </style>
