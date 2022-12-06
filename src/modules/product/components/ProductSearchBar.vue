@@ -1,19 +1,39 @@
 <script setup>
-import { ref } from 'vue';
+import { computed } from 'vue';
 import { BaseInput } from '@ComposedUi';
 import Glass from '@Icons/glass.svg?component';
 
-const search = ref('');
+const emit = defineEmits(['update:modelValue']);
+
+const props = defineProps({
+  modelValue: {
+    default: '',
+    required: true,
+    type: String,
+  },
+});
+
+const model = computed({
+  get: () => props.modelValue,
+  set: (value) => emit('update:modelValue', value),
+});
+
+function setSearch(value) {
+  model.value = value;
+}
 </script>
 
 <template>
   <section class="search-bar">
     <AppText tag="h3">Encontre seu produto</AppText>
+
     <BaseInput
-      v-model="search"
+      v-model="model"
       placeholder="Pesquisar..."
       type="search"
+      @blur="setSearch"
     />
+
     <AppButton>
       <template #icon>
         <Glass />

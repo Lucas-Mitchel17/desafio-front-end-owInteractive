@@ -1,4 +1,5 @@
 <script setup>
+import { computed, ref } from 'vue';
 import { useCartStore } from '@Modules/cart';
 import {
   ProductSlider,
@@ -20,6 +21,23 @@ const slides = [
     subtitle: 'Você encontra aqui',
   },
 ];
+
+const search = ref('');
+
+console.log(search);
+
+const productList = computed(() => {
+  if (!search.value) {
+    return productStore.products;
+  }
+
+  return productStore.products.filter((product) => {
+    const productNameLowerCased = product.name.toLowerCase();
+    const searchLowerCased = search.value.toLowerCase();
+
+    return productNameLowerCased.indexOf(searchLowerCased) != -1;
+  });
+});
 
 function removeProduct(id) {
   const productIndex = cartStore.products.indexOf(id);
@@ -45,11 +63,11 @@ function onToggleProducts(id) {
   <MainLayout>
     <ProductSlider :slides="slides" />
     <section class="container">
-      <ProductSearchBar />
+      <ProductSearchBar v-model="search" />
 
       <div class="card-section">
         <ProductCard
-          :products="productStore.products"
+          :products="productList"
           @onToggleProducts="onToggleProducts"
         />
       </div>
