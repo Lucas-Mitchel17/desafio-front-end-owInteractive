@@ -12,7 +12,6 @@
   background-color: $footer
   bottom: 0
   display: flex
-  height: 70px
   justify-content: center
   margin-top: 60px
   padding: 30px 0
