@@ -273,6 +273,9 @@ function onCloseModal() {
         grid-row: 4
         margin: 0 0 0 auto
 
+        & > .input-medium
+          max-width: 90%
+
     & .fieldset:nth-child(6)
       @media (min-width: $tablet-medium)
         grid-row: 1
@@ -296,7 +299,7 @@ function onCloseModal() {
         margin: 0 0 0 auto
 
         & > .input-medium
-          width: initial
+          max-width: 90%
 
     & .fieldset:nth-child(11)
       @media (min-width: $tablet-medium)
@@ -306,4 +309,10 @@ function onCloseModal() {
       @media (min-width: $tablet-medium)
         grid-row: 4
         margin: 0 0 0 auto
+
+    & > .actions
+      margin: 0 0 auto auto
+
+      @media (min-width: $tablet-medium)
+        grid-column: 2
 </style>
