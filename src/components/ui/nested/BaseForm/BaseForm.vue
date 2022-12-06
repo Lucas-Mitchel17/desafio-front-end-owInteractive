@@ -48,7 +48,7 @@ const emit = defineEmits(['onSubmit', 'onCancel']);
       :key="field.name"
     />
 
-    <footer class="flex gap-2 mt-[20px]">
+    <div class="actions">
       <AppButton
         v-if="!onlySubmit"
         v-bind="{ ...actions.error }"
@@ -62,6 +62,6 @@ const emit = defineEmits(['onSubmit', 'onCancel']);
         :disabled="loading"
         :loading="loading"
       />
-    </footer>
+    </div>
   </form>
 </template>

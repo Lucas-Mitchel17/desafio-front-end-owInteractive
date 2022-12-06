@@ -64,11 +64,15 @@ const emit = defineEmits(['onRemoveAllProducts']);
     & > .icon > svg
       fill: $backgroundGrey
 
-  & > a > .btn:nth-child(2)
-    justify-content: end
-    margin: auto
+  & > a:nth-child(2)
+    justify-content: center
+    margin: 20px auto
 
-  & > a > .btn:nth-child(3)
+    @media (min-width: $tablet-medium)
+      justify-content: end
+      margin: 0 0 auto auto
+
+  & > a:nth-child(3)
     justify-content: center
     margin: auto
 
