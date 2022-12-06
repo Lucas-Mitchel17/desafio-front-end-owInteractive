@@ -1,32 +1,19 @@
 <script setup>
-import { CartLink } from '@Modules/cart';
+import { CartLink, useCartStore } from '@Modules/cart';
 
-const totalProducts = [
-  {
-    id: 1,
-  },
-  {
-    id: 2,
-  },
-  {
-    id: 3,
-  },
-  {
-    id: 4,
-  },
-  {
-    id: 5,
-  },
-];
+const cardStore = useCartStore();
 </script>
 
 <template>
   <header class="header">
     <nav class="nav">
-      <AppText tag="h1"> Mkt<span>Place</span> </AppText>
+      <a href="/">
+        <AppText tag="h1"> Mkt<span>Place</span> </AppText>
+      </a>
 
       <AppText>Produtos</AppText>
-      <CartLink :items="totalProducts.length" />
+
+      <CartLink :items="cardStore.productsOnCart" />
     </nav>
   </header>
 </template>
@@ -56,7 +43,7 @@ const totalProducts = [
       grid-template-columns: minmax(120px, 896px) repeat(2, 110px)
 
 
-    & > .text-h1
+    & > a > .text-h1
       color: $grey
       font-size: 30px
       margin: 0
