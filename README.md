@@ -29,7 +29,7 @@ lucasmitchelcampos17@gmail.com
 _Github_: https://github.com/Lucas-Mitchel17/desafio-front-end-owInteractive
 _Board_: https://github.com/users/Lucas-Mitchel17/projects/1
 _Deploy:_ https://desafio-front-end-ow-interactive.vercel.app/
-_Documentação:_
+_Documentação:_ https://www.notion.so/Arquitetura-3ee16c055b17461e8e553e9378c90430
 
 ### 📊 Git Stats:
 
@@ -51,6 +51,8 @@ _Documentação:_
 - Vitest
 - Storybook
 - PWA
+- Prettier
+- ESLint
 
 ## 💻 Metodologias e Conceitos
 
