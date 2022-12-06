@@ -61,6 +61,8 @@ function onToggleProducts(id) {
   }));
 
   updateStorageCart(productsWithQttList);
+
+  search.value = '';
 }
 </script>
 
@@ -81,6 +83,7 @@ function onToggleProducts(id) {
       </template>
 
       <AppText
+        v-else
         tag="h2"
         class="no-items"
         >Nenhum produto disponível</AppText
