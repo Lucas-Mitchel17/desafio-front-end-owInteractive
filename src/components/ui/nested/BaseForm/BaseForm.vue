@@ -36,11 +36,11 @@ defineProps({
   },
 });
 
-const emit = defineEmits(['submit', 'cancel']);
+const emit = defineEmits(['onSubmit', 'onCancel']);
 </script>
 
 <template>
-  <form @submit.prevent="emit('submit')">
+  <form @submit.prevent="emit('onSubmit')">
     <BaseFieldSet
       v-for="field in fields"
       v-bind="field"
