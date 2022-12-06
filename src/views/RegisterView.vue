@@ -32,7 +32,7 @@ const fields = reactive([
     label: 'Nome *',
     loading: loading,
     errorMessage: '',
-    required: false,
+    required: true,
     name: 'name',
     type: INPUT_TYPES.TYPE_ENUM.TEXT,
     modelValue: '',
@@ -174,7 +174,7 @@ function newUser() {
   let hasError = false;
 
   fields.forEach((field) => {
-    if (field.required && !field.model) {
+    if (field.required && !field.modelValue) {
       hasError = true;
       field.errorMessage = 'Campo obrigatório';
       return;
