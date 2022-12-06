@@ -31,15 +31,18 @@ defineProps({
 
 
   & > p
+    align-items: center;
     background-color: $red
     border-radius: 10px
     color: $white
-    margin: 0
+    display: flex;
     font-size: 13px
     font-weight: 600
+    height: 15px
+    justify-content: center;
+    margin: 0
     text-align: center
     width: 15px
-    height: 15px
 
   & > svg
     fill: $purple

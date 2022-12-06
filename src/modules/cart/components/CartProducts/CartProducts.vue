@@ -206,6 +206,7 @@ onMounted(() => {
 
       & > .input
         border-radius: 0
+        text-align: center
         width: 12px
 
     & > .unit
