@@ -42,6 +42,7 @@ const emit = defineEmits(['click']);
     <section class="icon">
       <slot name="icon" />
     </section>
+
     {{ label }}
   </button>
 </template>
