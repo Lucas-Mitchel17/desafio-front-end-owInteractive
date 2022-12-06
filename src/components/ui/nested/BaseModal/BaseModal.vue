@@ -3,7 +3,7 @@ import { computed } from 'vue';
 import { styleFromStateHelper } from '@Helpers';
 import CloseIcon from '@Icons/close.svg?component';
 
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(['update:modelValue', 'onCloseModal']);
 
 const props = defineProps({
   backOption: Boolean,
@@ -34,32 +34,30 @@ const model = computed({
 const dynamicClasses = computed(() => {
   return [activeClass(model.value)];
 });
-
-function toogleModal() {
-  model.value = !model.value;
-}
 </script>
 
 <template>
   <Teleport to="#modal">
-    <aside :class="['modal', ...dynamicClasses]">
+    <aside
+      v-show="model"
+      :class="['modal', ...dynamicClasses]"
+    >
       <section
-        v-show="model"
         class="layer"
-        @click="toogleModal"
+        @click="emit('onCloseModal')"
       />
 
       <section class="content">
         <CloseIcon
           class="close"
-          @click="toogleModal"
+          @click="emit('onCloseModal')"
         />
 
         <header v-if="model && title">
           <section class="icon">
             <slot
               name="icon"
-              v-if="$slots.default"
+              v-if="$slots.icon"
             />
           </section>
 
@@ -79,7 +77,7 @@ function toogleModal() {
 </template>
 
 <style lang="sass" scoped>
-.layer
+.modal .layer
   backdrop-filter: blur(1.75px)
   background: $layerBack
   bottom: 0
@@ -89,9 +87,9 @@ function toogleModal() {
   right: 0
   top: 0
   transition: opacity .2s ease-in-out
-  z-index: 9
+  z-index: 999
 
-.content
+.modal .content
   background: $white
   border-radius: 2px
   bottom: 0
@@ -104,7 +102,7 @@ function toogleModal() {
   transition: opacity .2s ease-in-out
   opacity: 0
   top: 0
-  z-index: 99
+  z-index: 9999
 
 .modal.is-active .content,
 .modal.is-active .layer
