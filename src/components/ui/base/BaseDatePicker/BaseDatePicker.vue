@@ -49,8 +49,7 @@ const dynamicClasses = computed(() => {
 .BaseDatePicker
   box-shadow: none
   border-radius: 2px
-  max-width: 200px
-  width: 100%
+  max-width: 50%
 
 .dp__input_valid
   box-shadow: none
