@@ -103,15 +103,18 @@ const dynamicClasses = computed(() => {
   font-weight: 600
 
 .input-small
-  max-width: 140px
-  width: 100%
+  max-width: 100%
+  @media (min-width: $tablet-medium)
+    max-width: 140px
+    width: 100%
 .input-medium
-  max-width: 200px
-  width: 100%
-
+  max-width: 100%
+  @media (min-width: $tablet-medium)
+    max-width: 50%
 .input-full
-  max-width: 437px
-  width: 100%
+  max-width: 100%
+  @media (min-width: $tablet-medium)
+    max-width: 60%
 
 .input:active,
 .input:hover,
