@@ -57,15 +57,8 @@ const props = defineProps({
 });
 
 const model = computed({
-  get() {
-    return props.modelValue;
-  },
-
-  set(newValue) {
-    if (props.type !== TYPE_ENUM.FILE) {
-      return emit('update:modelValue', newValue);
-    }
-  },
+  get: () => props.modelValue,
+  set: (newValue) => emit('update:modelValue', newValue),
 });
 
 const dynamicClasses = computed(() => {
