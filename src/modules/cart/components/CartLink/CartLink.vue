@@ -8,10 +8,12 @@ defineProps({
   },
 });
 </script>
+
 <template>
   <div class="nav-cart">
     <Cart />
-    <AppText :items="items">
+
+    <AppText>
       {{ items }}
     </AppText>
   </div>
