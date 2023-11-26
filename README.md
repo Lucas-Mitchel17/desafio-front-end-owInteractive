@@ -1,6 +1,6 @@
 # 💫 Sobre mim:
 
-Trabalho atualmente como desenvolvedor Frontend, e gosto muito dessa área! Recentemente em meus projetos venho utilizando tecnologias e frameworks como Vue.js e Gridsome, e estou sempre em busca de aprender mais!
+Trabalho atualmente como desenvolvedor Frontend, e gosto muito dessa área! Recentemente em meus projetos venho utilizando tecnologias e frameworks como Vue.js e Astro, e estou sempre em busca de aprender mais!
 
 Sempre fui uma pessoa dedicada e esforçada em qualquer serviço. Meu primeiro emprego foi em 2013 como ajudante em uma marcenaria. Tomei gosto por trabalhar com projetos e ver que eu podia usar minha criatividade pra resolver problemas. Desde essa época já tinha contato com computadores e sempre fui interessado na área. Só não fazia ideia que eu poderia usar essa criatividade pra solucionar problemas de uma forma muito mais completa pela web.
 
